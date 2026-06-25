@@ -260,6 +260,39 @@
       font-size: 0.86rem;
       color: #666;
     }
+
+    /* Pee log form */
+    .pee-log-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.94rem;
+      table-layout: fixed;
+    }
+    .pee-log-table th,
+    .pee-log-table td {
+      border: 1px solid #e0e0e0;
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+    .pee-log-table th {
+      background: #fafafa;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pee-log-table input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font: inherit;
+      background: #fff;
+    }
+    .pee-log-table input:focus {
+      outline: 2px solid rgba(29,91,191,0.25);
+      border-color: #1d5bbf;
+    }
   </style>
 </head>
 
@@ -284,6 +317,29 @@
       </div>
     </header>
 
+    <section class="card" id="pee-log">
+      <h2 data-i18n="pee_log_h2">📝 Donki 排尿记录</h2>
+      <p class="small" data-i18n="pee_log_intro">请在这里记录 Donki 的尿尿时间，方便确认是否接近 24 小时没有尿尿。</p>
+      <table class="pee-log-table" aria-label="Donki pee log">
+        <tr>
+          <th data-i18n="pee_log_date">日期</th>
+          <th data-i18n="pee_log_morning">早上尿尿时间</th>
+          <th data-i18n="pee_log_evening">下午/晚上尿尿时间</th>
+        </tr>
+        <tr>
+          <td>2026/06/26</td>
+          <td><input type="text" name="pee_0626_morning" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：07:30" /></td>
+          <td><input type="text" name="pee_0626_evening" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：20:10" /></td>
+        </tr>
+        <tr>
+          <td>2026/06/27</td>
+          <td><input type="text" name="pee_0627_morning" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：07:30" /></td>
+          <td><input type="text" name="pee_0627_evening" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：20:10" /></td>
+        </tr>
+      </table>
+      <p class="calendar-note" data-i18n="pee_log_note">如果某个时间段没有看到尿尿，可以写“未看到”。如果接近 24 小时没尿尿，请按下方排尿说明处理并联系我。</p>
+    </section>
+
     <div class="grid">
       <!-- LEFT COLUMN -->
       <div>
@@ -300,6 +356,7 @@
                 <ul>
                   <li data-i18n="diet_morning_1">一袋湿粮 <strong>Royal Canin</strong>（起床/吃早餐时）。</li>
                   <li data-i18n="diet_morning_2">更换饮水杯里的水（使用滤水器里的水）。</li>
+                  <li data-i18n="diet_morning_4">出门前在干粮碗里铺一薄层干粮即可。</li>
                   <li data-i18n="diet_morning_3"><strong>确认早上是否有尿尿</strong>（看猫砂盆是否有新尿团）。</li>
                 </ul>
               </td>
@@ -311,7 +368,6 @@
                   <li data-i18n="diet_evening_1">一袋湿粮 <strong>Royal Canin</strong>（到家时）。</li>
                   <li data-i18n="diet_evening_2"><strong>确认下午/晚上是否有尿尿</strong>（看猫砂盆是否有新尿团）。</li>
                   <li data-i18n="diet_evening_3">如果当天到 18:00 还没看到尿团，请特别留意晚上是否进猫砂盆。</li>
-                  <li data-i18n="diet_evening_4">这两天湿粮都用 <strong>Royal Canin</strong>，不要换 Leonardo。</li>
                 </ul>
               </td>
             </tr>
@@ -483,7 +539,7 @@
             <tr class="pill-day">
               <td>2026/06/26</td>
               <td data-i18n="cal_day_0626">
-                07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>
+                07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>
                 18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>
                 22:00 — 一粒 Prednisolone
               </td>
@@ -491,7 +547,7 @@
             <tr class="pill-day">
               <td>2026/06/27</td>
               <td data-i18n="cal_day_0627">
-                07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>
+                07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>
                 18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>
                 22:00 — 一粒 Prednisolone
               </td>
@@ -507,7 +563,7 @@
         <section class="card" id="summary">
           <h2 data-i18n="check_h2">📌 每日小 checklist</h2>
           <ul>
-            <li data-i18n="check_1">✔ 07:00：喂一袋 Royal Canin 湿粮 + 换水 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂。</li>
+            <li data-i18n="check_1">✔ 07:00：喂一袋 Royal Canin 湿粮 + 换水 + 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂。</li>
             <li data-i18n="check_2">✔ 18:00：喂一袋 Royal Canin 湿粮 + 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂。</li>
             <li data-i18n="check_3">✔ 22:00：喂 1 粒 Prednisolone。</li>
             <li data-i18n="check_4">✔ 每天确认：Donki 至少尿一次尿。</li>
@@ -536,17 +592,25 @@
         badge_daily: "每天执行",
         badge_check: "每天检查",
 
+        pee_log_h2: "📝 Donki 排尿记录",
+        pee_log_intro: "请在这里记录 Donki 的尿尿时间，方便确认是否接近 24 小时没有尿尿。",
+        pee_log_date: "日期",
+        pee_log_morning: "早上尿尿时间",
+        pee_log_evening: "下午/晚上尿尿时间",
+        pee_log_placeholder: "例如：07:30",
+        pee_log_note: "如果某个时间段没有看到尿尿，可以写“未看到”。如果接近 24 小时没尿尿，请按下方排尿说明处理并联系我。",
+
         diet_h2: "🍽 饮食与用药",
         diet_morning_th: "早上<br>07:00",
         diet_morning_1: "一袋湿粮 <strong>Royal Canin</strong>（起床/吃早餐时）。",
         diet_morning_2: "更换饮水杯里的水（使用滤水器里的水）。",
+        diet_morning_4: "出门前在干粮碗里铺一薄层干粮即可。",
         diet_morning_3: "<strong>确认早上是否有尿尿</strong>（看猫砂盆是否有新尿团）。",
         diet_evening_th: "下午<br>18:00",
         diet_evening_1: "一袋湿粮 <strong>Royal Canin</strong>（到家时）。",
         diet_evening_2: "<strong>确认下午/晚上是否有尿尿</strong>（看猫砂盆是否有新尿团）。",
         diet_evening_2_note: "",
         diet_evening_3: "如果当天到 18:00 还没看到尿团，请特别留意晚上是否进猫砂盆。",
-        diet_evening_4: "这两天湿粮都用 <strong>Royal Canin</strong>，不要换 Leonardo。",
         diet_bed_th: "晚上<br>22:00",
         diet_bed_1: "每天喂 <strong>1 粒 Prednisolone</strong>。",
         diet_tip: "所有湿粮可以使用一次性咖啡滤纸盛放，这样可以减少洗碗频次，随用随扔即可。",
@@ -625,12 +689,12 @@
         cal_intro: "时间范围：<strong>2026/06/26 – 2026/06/27</strong><br>这两天请按固定时间喂湿粮和 Prednisolone。",
         cal_th_date: "日期",
         cal_th_action: "安排",
-        cal_day_0626: "07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>22:00 — 一粒 Prednisolone",
-        cal_day_0627: "07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>22:00 — 一粒 Prednisolone",
+        cal_day_0626: "07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>22:00 — 一粒 Prednisolone",
+        cal_day_0627: "07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>22:00 — 一粒 Prednisolone",
         cal_note: "✔ 这两天每天都需要：早上 7 点一袋 Royal Canin、下午 6 点一袋 Royal Canin、晚上 10 点一粒 Prednisolone。<br>✔ 早上和下午/晚上都分别确认一次是否有尿尿。",
 
         check_h2: "📌 每日小 checklist",
-        check_1: "✔ 07:00：喂一袋 Royal Canin 湿粮 + 换水 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂。",
+        check_1: "✔ 07:00：喂一袋 Royal Canin 湿粮 + 换水 + 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂。",
         check_2: "✔ 18:00：喂一袋 Royal Canin 湿粮 + 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂。",
         check_3: "✔ 22:00：喂 1 粒 Prednisolone。",
         check_4: "✔ 每天确认：Donki 至少尿一次尿。",
@@ -649,17 +713,25 @@
         badge_daily: "Daily",
         badge_check: "Daily check",
 
+        pee_log_h2: "📝 Donki Pee Log",
+        pee_log_intro: "Please record Donki’s pee times here so it is easy to check whether he is close to 24 hours without peeing.",
+        pee_log_date: "Date",
+        pee_log_morning: "Morning pee time",
+        pee_log_evening: "Afternoon/evening pee time",
+        pee_log_placeholder: "e.g. 07:30",
+        pee_log_note: "If you did not see pee in a time period, write “not seen”. If Donki is close to 24 hours without peeing, follow the pee instructions below and contact me.",
+
         diet_h2: "🍽 Feeding & Medication",
         diet_morning_th: "Morning<br>07:00",
         diet_morning_1: "1 pouch wet food: <strong>Royal Canin</strong> (when you wake up / have breakfast).",
         diet_morning_2: "Replace drinking water (use filtered water).",
+        diet_morning_4: "Before leaving, put only a thin layer of dry food in the dry-food bowl.",
         diet_morning_3: "<strong>Confirm whether Donki peed in the morning</strong> (check for a new urine clump in the litter box).",
         diet_evening_th: "Evening<br>18:00",
         diet_evening_1: "1 pouch wet food: <strong>Royal Canin</strong> (when you arrive home).",
         diet_evening_2: "<strong>Confirm whether Donki peed in the afternoon/evening</strong> (check for a new urine clump in the litter box).",
         diet_evening_2_note: "",
         diet_evening_3: "If there is still no urine clump by 18:00, pay extra attention in the evening.",
-        diet_evening_4: "For these two days, use <strong>Royal Canin</strong> wet food only, not Leonardo.",
         diet_bed_th: "Night<br>22:00",
         diet_bed_1: "Give <strong>1 tablet of Prednisolone</strong> every day.",
         diet_tip: "You can put wet food on a disposable coffee filter paper to reduce dishwashing.",
@@ -738,12 +810,12 @@
         cal_intro: "Range: <strong>2026/06/26 – 2026/06/27</strong><br>For these two days, please follow the fixed wet food and Prednisolone schedule.",
         cal_th_date: "Date",
         cal_th_action: "Schedule",
-        cal_day_0626: "07:00 — 1 pouch of Royal Canin wet food (when you wake up / have breakfast) + confirm morning pee; if Donki peed, please scoop the litter box<br>18:00 — 1 pouch of Royal Canin wet food (when you arrive home) + confirm afternoon/evening pee; if Donki peed, please scoop the litter box<br>22:00 — 1 tablet of Prednisolone",
-        cal_day_0627: "07:00 — 1 pouch of Royal Canin wet food (when you wake up / have breakfast) + confirm morning pee; if Donki peed, please scoop the litter box<br>18:00 — 1 pouch of Royal Canin wet food (when you arrive home) + confirm afternoon/evening pee; if Donki peed, please scoop the litter box<br>22:00 — 1 tablet of Prednisolone",
+        cal_day_0626: "07:00 — 1 pouch of Royal Canin wet food (when you wake up / have breakfast) + before leaving, put a thin layer of dry food in the bowl + confirm morning pee; if Donki peed, please scoop the litter box<br>18:00 — 1 pouch of Royal Canin wet food (when you arrive home) + confirm afternoon/evening pee; if Donki peed, please scoop the litter box<br>22:00 — 1 tablet of Prednisolone",
+        cal_day_0627: "07:00 — 1 pouch of Royal Canin wet food (when you wake up / have breakfast) + before leaving, put a thin layer of dry food in the bowl + confirm morning pee; if Donki peed, please scoop the litter box<br>18:00 — 1 pouch of Royal Canin wet food (when you arrive home) + confirm afternoon/evening pee; if Donki peed, please scoop the litter box<br>22:00 — 1 tablet of Prednisolone",
         cal_note: "✔ For both days: 1 pouch of Royal Canin at 07:00, 1 pouch of Royal Canin at 18:00, and 1 tablet of Prednisolone at 22:00.<br>✔ Confirm pee once in the morning and once in the afternoon/evening.",
 
         check_h2: "📌 Daily Checklist",
-        check_1: "✔ 07:00: 1 pouch Royal Canin wet food + change water + confirm morning pee; if Donki peed, please scoop the litter box.",
+        check_1: "✔ 07:00: 1 pouch Royal Canin wet food + change water + before leaving, put a thin layer of dry food in the bowl + confirm morning pee; if Donki peed, please scoop the litter box.",
         check_2: "✔ 18:00: 1 pouch Royal Canin wet food + confirm afternoon/evening pee; if Donki peed, please scoop the litter box.",
         check_3: "✔ 22:00: give 1 tablet of Prednisolone.",
         check_4: "✔ Daily: confirm at least one pee.",
@@ -766,6 +838,14 @@
         const key = el.getAttribute("data-i18n");
         if (dict[key] !== undefined) {
           el.innerHTML = dict[key];
+        }
+      });
+
+      // Update translated placeholders without clearing typed values
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (dict[key] !== undefined) {
+          el.setAttribute("placeholder", dict[key]);
         }
       });
 
