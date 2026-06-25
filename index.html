@@ -289,6 +289,19 @@
       font: inherit;
       background: #fff;
     }
+    .pee-log-table input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+      accent-color: #1d5bbf;
+    }
+    .pee-log-table label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.92rem;
+    }
     .pee-log-table input:focus {
       outline: 2px solid rgba(29,91,191,0.25);
       border-color: #1d5bbf;
@@ -325,16 +338,19 @@
           <th data-i18n="pee_log_date">日期</th>
           <th data-i18n="pee_log_morning">早上尿尿时间</th>
           <th data-i18n="pee_log_evening">下午/晚上尿尿时间</th>
+          <th data-i18n="pee_log_pred">Prednisolone</th>
         </tr>
         <tr>
           <td>2026/06/26</td>
           <td><input type="text" name="pee_0626_morning" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：07:30" /></td>
           <td><input type="text" name="pee_0626_evening" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：20:10" /></td>
+          <td><label><input type="checkbox" name="pred_0626" /> <span data-i18n="pee_log_pred_given">已喂</span></label></td>
         </tr>
         <tr>
           <td>2026/06/27</td>
           <td><input type="text" name="pee_0627_morning" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：07:30" /></td>
           <td><input type="text" name="pee_0627_evening" data-i18n-placeholder="pee_log_placeholder" placeholder="例如：20:10" /></td>
+          <td><label><input type="checkbox" name="pred_0627" /> <span data-i18n="pee_log_pred_given">已喂</span></label></td>
         </tr>
       </table>
       <p class="calendar-note" data-i18n="pee_log_note">如果某个时间段没有看到尿尿，可以写“未看到”。如果接近 24 小时没尿尿，请按下方排尿说明处理并联系我。</p>
@@ -597,6 +613,8 @@
         pee_log_date: "日期",
         pee_log_morning: "早上尿尿时间",
         pee_log_evening: "下午/晚上尿尿时间",
+        pee_log_pred: "Prednisolone 是否已喂",
+        pee_log_pred_given: "已喂",
         pee_log_placeholder: "例如：07:30",
         pee_log_note: "如果某个时间段没有看到尿尿，可以写“未看到”。如果接近 24 小时没尿尿，请按下方排尿说明处理并联系我。",
 
@@ -718,6 +736,8 @@
         pee_log_date: "Date",
         pee_log_morning: "Morning pee time",
         pee_log_evening: "Afternoon/evening pee time",
+        pee_log_pred: "Prednisolone given?",
+        pee_log_pred_given: "Given",
         pee_log_placeholder: "e.g. 07:30",
         pee_log_note: "If you did not see pee in a time period, write “not seen”. If Donki is close to 24 hours without peeing, follow the pee instructions below and contact me.",
 
