@@ -20,7 +20,7 @@
 
     /* More white space on both sides + narrower reading width */
     .page {
-      max-width: 760px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 28px 36px 56px;
     }
@@ -97,12 +97,17 @@
 
     .grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
       gap: 20px;
     }
 
     @media (max-width: 768px) {
       .grid { grid-template-columns: minmax(0, 1fr); }
+      .calendar-table { font-size: 0.86rem; }
+      .calendar-table th:first-child,
+      .calendar-table td:first-child { width: 92px; }
+      .calendar-table th,
+      .calendar-table td { padding: 6px 7px; }
     }
 
     .card {
@@ -218,6 +223,7 @@
     /* Medicine calendar */
     .calendar-table {
       width: 100%;
+      table-layout: fixed;
       border-collapse: collapse;
       margin-top: 6px;
       font-size: 0.9rem;
@@ -228,12 +234,22 @@
       padding: 6px 8px;
       text-align: left;
       vertical-align: top;
+      overflow-wrap: anywhere;
+      word-break: normal;
     }
     .calendar-table th {
       background: #fafafa;
       font-weight: 600;
       white-space: nowrap;
-      width: 120px;
+    }
+    .calendar-table th:first-child,
+    .calendar-table td:first-child {
+      width: 105px;
+      white-space: nowrap;
+    }
+    .calendar-table th:last-child,
+    .calendar-table td:last-child {
+      width: auto;
     }
     .pill-day {
       background: #fff4f4;
@@ -530,7 +546,7 @@
         diet_evening_2: "<strong>确认下午/晚上是否有尿尿</strong>（看猫砂盆是否有新尿团）。",
         diet_evening_2_note: "",
         diet_evening_3: "如果当天到 18:00 还没看到尿团，请特别留意晚上是否进猫砂盆。",
-        diet_evening_4: "这两天湿粮都用 <strong>Royal Canin</strong>",
+        diet_evening_4: "这两天湿粮都用 <strong>Royal Canin</strong>，不要换 Leonardo。",
         diet_bed_th: "晚上<br>22:00",
         diet_bed_1: "每天喂 <strong>1 粒 Prednisolone</strong>。",
         diet_tip: "所有湿粮可以使用一次性咖啡滤纸盛放，这样可以减少洗碗频次，随用随扔即可。",
