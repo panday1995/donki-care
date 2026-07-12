@@ -40,6 +40,11 @@
     .pee-log-table input[type="checkbox"] { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; accent-color: #1d5bbf; }
     .pee-log-table label { display: inline-flex; align-items: center; gap: 4px; font-size: 0.92rem; }
     strong { font-weight: 600; }
+      .priority-box { background: #fff7ed; border: 2px solid #f97316; border-radius: 12px; padding: 14px 16px; margin: 0 0 18px; }
+    .priority-box h2 { margin: 0 0 8px; font-size: 1.2rem; color: #9a3412; }
+    .priority-box ol { margin: 0; padding-left: 24px; }
+    .priority-box li { margin: 6px 0; font-weight: 650; }
+    .critical { color: #b91c1c; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -55,30 +60,13 @@
       </div>
     </header>
 
-    <section class="card" id="pee-log">
-      <h2>📝 Donki 排尿记录</h2>
-      <p class="small">如果方便，可以在这里临时记录 Donki 的尿尿时间，方便确认是否接近 24 小时没有尿尿。</p>
-      <table class="pee-log-table" aria-label="Donki pee log">
-        <tr>
-          <th>日期</th>
-          <th>早上尿尿时间</th>
-          <th>下午/晚上尿尿时间</th>
-          <th>Prednisolone</th>
-        </tr>
-        <tr>
-          <td>2026/06/26</td>
-          <td><input type="text" name="pee_0626_morning" placeholder="例如：07:30 / 未看到" /></td>
-          <td><input type="text" name="pee_0626_evening" placeholder="例如：20:10 / 未看到" /></td>
-          <td><label><input type="checkbox" name="pred_0626" /> 已喂</label></td>
-        </tr>
-        <tr>
-          <td>2026/06/27</td>
-          <td><input type="text" name="pee_0627_morning" placeholder="例如：07:30 / 未看到" /></td>
-          <td><input type="text" name="pee_0627_evening" placeholder="例如：20:10 / 未看到" /></td>
-          <td><label><input type="checkbox" name="pred_0627" /> 已喂</label></td>
-        </tr>
-      </table>
-      <p class="small">如果某个时间段没有看到尿尿，可以写“未看到”。如果接近 24 小时没尿尿，请按下方排尿说明处理并联系我。</p>
+    <section class="priority-box" id="daily-priorities">
+      <h2>⚠️ 每天最重要的三件事</h2>
+      <ol>
+        <li>确认 Donki <span class="critical">每天至少排尿一次</span>。</li>
+        <li><span class="critical">18:00</span>：将 <span class="critical">1 粒肌肉补充剂</span>放入湿粮中，一起喂食。</li>
+        <li><span class="critical">22:00</span>：喂 <span class="critical">0.75 片 Prednicortone</span>。</li>
+      </ol>
     </section>
 
     <div class="grid">
@@ -102,6 +90,7 @@
               <td>
                 <ul>
                   <li>一袋湿粮 <strong>Royal Canin</strong>（到家时）。</li>
+                  <li class="critical">将 1 粒肌肉补充剂放入湿粮中，一起喂食。</li>
                   <li><strong>确认下午/晚上是否有尿尿</strong>（看猫砂盆是否有新尿团）。如果有尿尿，请铲猫砂。</li>
                   <li>如果当天到 18:00 还没看到尿团，请特别留意晚上是否进猫砂盆。</li>
                 </ul>
@@ -109,7 +98,7 @@
             </tr>
             <tr>
               <th>晚上<br>22:00</th>
-              <td><ul><li>每天喂 <strong>1 粒 Prednisolone</strong>。</li></ul></td>
+              <td><ul><li class="critical">每天喂 <strong>0.75 片 Prednicortone</strong>。</li></ul></td>
             </tr>
           </table>
           <p class="highlight">所有湿粮可以使用一次性咖啡滤纸盛放，这样可以减少洗碗频次，随用随扔即可。</p>
@@ -172,7 +161,7 @@
           <ul>
             <li>Donki 明显精神不振、一直躲着、不爱活动。</li>
             <li>持续呕吐或反复干呕。</li>
-            <li>超过 <strong>一天多没有尿尿</strong>（确认猫砂盆里没有新尿团）。</li>
+            <li>接近或超过 <strong>24 小时没有尿尿</strong>（确认猫砂盆里没有新尿团）。</li>
           </ul>
           <h3>首选医院</h3>
           <p><strong>AniCura Copenhagen Animal Hospital</strong></p>
@@ -185,25 +174,13 @@
           <p class="small">杨帆 手机号：<strong>50 14 33 41</strong></p>
           <div class="alert"><strong>真的很重要的一点：</strong><br>我完全相信你的责任心。即使 Donki 出现问题，我也不会怪你。你能帮忙照顾他，对我已经是很大的帮助。🙏</div>
         </section>
-
-        <section class="card" id="medicine-calendar">
-          <h2>💊 6月26–27日照顾日历</h2>
-          <p class="small">时间范围：<strong>2026/06/26 – 2026/06/27</strong><br>这两天请按固定时间喂湿粮和 Prednisolone。</p>
-          <table class="calendar-table" aria-label="Donki feeding and medication schedule">
-            <tr><th>日期</th><th>安排</th></tr>
-            <tr class="pill-day"><td>2026/06/26</td><td>07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>22:00 — 一粒 Prednisolone</td></tr>
-            <tr class="pill-day"><td>2026/06/27</td><td>07:00 — 一袋 Royal Canin 湿粮（你起床/吃早餐时）+ 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂<br>18:00 — 一袋 Royal Canin 湿粮（你到家时）+ 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂<br>22:00 — 一粒 Prednisolone</td></tr>
-          </table>
-          <p class="small">✔ 这两天每天都需要：早上 7 点一袋 Royal Canin、下午 6 点一袋 Royal Canin、晚上 10 点一粒 Prednisolone。<br>✔ 早上和下午/晚上都分别确认一次是否有尿尿。</p>
-        </section>
-
         <section class="card" id="summary">
           <h2>📌 每日小 checklist</h2>
           <ul>
-            <li>✔ 07:00：喂一袋 Royal Canin 湿粮 + 换水 + 出门前在干粮碗里铺一薄层干粮 + 确认早上是否有尿尿；如果有尿尿，请铲猫砂。</li>
-            <li>✔ 18:00：喂一袋 Royal Canin 湿粮 + 确认下午/晚上是否有尿尿；如果有尿尿，请铲猫砂。</li>
-            <li>✔ 22:00：喂 1 粒 Prednisolone。</li>
-            <li>✔ 每天确认：Donki 至少尿一次尿。</li>
+            <li>✔ 07:00：喂一袋 Royal Canin 湿粮 + 换水 + 出门前铺一薄层干粮 + 检查猫砂盆。</li>
+            <li class="critical">✔ 每天：必须确认 Donki 至少排尿一次。</li>
+            <li class="critical">✔ 18:00：喂一袋 Royal Canin 湿粮，并将 1 粒肌肉补充剂放入湿粮中。</li>
+            <li class="critical">✔ 22:00：喂 0.75 片 Prednicortone。</li>
             <li>✔ 每两天确认：Donki 是否有便便。</li>
             <li>✔ 出门/睡前：关好阳台门窗、桌上不留任何食物、垃圾袋系好。</li>
             <li>✔ 照顾期间不要摆放香氛/精油。</li>
